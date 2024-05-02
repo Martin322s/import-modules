@@ -1,6 +1,8 @@
+import CharactersList from "./components/CharactersList";
+
 function App() {
     return (
-        'a'
+        <CharactersList />
     );
 }
 
