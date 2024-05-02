@@ -7,19 +7,24 @@ function CharactersList() {
     const [state, setState] = useState([]);
     const [isPending, startTransition] = useTransition();
 
-    useEffect(() => {
+    const clickHandler = () => {
         startTransition(async () => {
             let charactersData = await charactersService.loadCharacters();
-            setState(charactersData.results);
+            setTimeout(() => {
+                setState(charactersData.results);
+            }, 4000);
         });
-    }, []);
+    };
 
     return (
-        <ul>
-            {
-                isPending ? <h1>Loading.....</h1> : state.map(x => <li key={x.name}>{x.name}</li>)
-            }
-        </ul>
+        <>
+            <ul>
+                {
+                    isPending ? <h1>Loading.....</h1> : state.map(x => <li key={x.name}>{x.name}</li>)
+                }
+            </ul>
+            <button onClick={clickHandler}>Load Characters</button>
+        </>
     );
 }
 
