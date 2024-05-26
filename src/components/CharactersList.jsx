@@ -20,10 +20,10 @@ function CharactersList() {
         <>
             <ul>
                 {
-                    isPending ? <h1>Loading.....</h1> : state.map(x => <li key={x.name}>{x.name}</li>)
+                    state.map(x => <li key={x.name}>{x.name}</li>)
                 }
             </ul>
-            <button onClick={clickHandler}>Load Characters</button>
+            <button onClick={clickHandler}>{isPending ? 'Loading...' : 'Load Characters'}</button>
         </>
     );
 }

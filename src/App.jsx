@@ -1,8 +1,12 @@
 import CharactersList from "./components/CharactersList";
+import FormDataComponent from "./components/FormData";
 
 function App() {
     return (
-        <CharactersList />
+        <>
+            <CharactersList />
+            {/* <FormDataComponent /> */}
+        </>
     );
 }
 
